@@ -1,527 +1,384 @@
 <!DOCTYPE html>
 <html lang="tr-TR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dışarıda Yemek Yerken Hesabı Dert Etmeyenler Kulübü: GastroClub, Albaraka Mobil’de!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-  :root {
-    --bg: #fefefe;
-    --text: #111827;
-    --muted: #6b7280;
-    --accent-pumpkin: #FF7518; /* Pumpkin Orange */
-    --accent-cherry: #D2042D; /* Cherry Red */
-    --accent-pumpkin-light: #FFF0E5; /* Açık Pumpkin Orange */
-    --font: 'Roboto', sans-serif;
-    --carousel-radius: 12px;
-    /* Anket için renkler */
-    --selected-answer-bg: var(--accent-pumpkin-light);
-    --selected-answer-border: var(--accent-pumpkin);
-  }
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--font);
-    background: var(--bg);
-    color: var(--text);
-    font-size: 1.05rem;
-    line-height: 1.75;
-  }
-  .progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 4px;
-    width: 0;
-    background: linear-gradient(to right, var(--accent-cherry), var(--accent-pumpkin));
-    border-radius: 2px;
-    box-shadow: 0 0 6px rgba(255, 117, 24, 0.3); /* Pumpkin orange gölge */
-    z-index: 1001;
-    transition: width 0.25s ease-out;
-  }
-  .container {
-    max-width: 680px;
-    margin: 20px auto;
-    padding: 16px 24px 32px;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-    position: relative;
-  }
-  h1, h2 {
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 24px;
-  }
-  h1 {
-    font-size: 2.25rem;
-    font-family: 'Playfair Display', serif;
-    color: var(--text);
-  }
-  h2 {
-    font-size: 1.5rem;
-    margin-top: 48px;
-    font-family: 'Playfair Display', serif;
-    color: var(--text);
-  }
-  p {
-    margin-bottom: 20px;
-    color: var(--muted);
-    font-family: 'Inter', sans-serif;
-  }
-  p strong {
-    color: var(--text);
-    font-weight: 600;
-  }
-  .highlighted-benefit {
-    background-color: var(--accent-pumpkin-light);
-    color: var(--accent-pumpkin);
-    padding: 2px 5px;
-    border-radius: 4px;
-    font-weight: 600;
-  }
-  ul { margin-bottom: 20px; padding-left: 20px; color: var(--muted); font-family: 'Inter', sans-serif; }
-  ul li { margin-bottom: 8px; line-height: 1.6; }
-  .image-block { margin: 32px 0; }
-  .image-block img { width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); }
-  .caption { text-align: center; font-size: 0.875rem; color: #9ca3af; margin-top: 8px; font-family: 'Inter', sans-serif; }
-  .button { background-color: var(--accent-pumpkin); color: white; padding: 12px 32px; border-radius: 10px; font-size: 0.95rem; font-weight: 500; text-decoration: none; box-shadow: 0 2px 6px rgba(255, 117, 24, 0.2); transition: all 0.3s ease; display: inline-block; }
-  .button:hover { background-color: var(--accent-cherry); } /* Hover'da Cherry Red */
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Albaraka Mobil’de Şimdi “Seçkin Fırsatlar” Zamanı!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fefefe;
+            --text: #111827;
+            --muted: #6b7280;
+            --accent-pumpkin: #FF7518; /* Pumpkin Orange */
+            --accent-cherry: #D2042D; /* Cherry Red */
+            --accent-pumpkin-light: #FFF0E5; /* Açık Pumpkin Orange */
+            --font: 'Roboto', sans-serif;
+            --carousel-radius: 12px;
+            /* Anket için renkler */
+            --selected-answer-bg: var(--accent-pumpkin-light);
+            --selected-answer-border: var(--accent-pumpkin);
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            font-size: 1.05rem;
+            line-height: 1.75;
+        }
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 0;
+            background: linear-gradient(to right, var(--accent-cherry), var(--accent-pumpkin));
+            border-radius: 2px;
+            box-shadow: 0 0 6px rgba(255, 117, 24, 0.3); /* Pumpkin orange gölge */
+            z-index: 1001;
+            transition: width 0.25s ease-out;
+        }
+        .container {
+            max-width: 680px;
+            margin: 20px auto;
+            padding: 16px 24px 32px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        h1, h2 {
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 24px;
+        }
+        h1 {
+            font-size: 2.25rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--text);
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 48px;
+            font-family: 'Playfair Display', serif;
+            color: var(--text);
+        }
+        p {
+            margin-bottom: 20px;
+            color: var(--muted);
+            font-family: 'Inter', sans-serif;
+        }
+        p strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+        .highlighted-benefit {
+            background-color: var(--accent-pumpkin-light);
+            color: var(--accent-pumpkin);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        ul { margin-bottom: 20px; padding-left: 20px; color: var(--muted); font-family: 'Inter', sans-serif; }
+        ul li { margin-bottom: 8px; line-height: 1.6; }
+        .image-block { margin: 32px 0; }
+        .image-block img { width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); }
+        .caption { text-align: center; font-size: 0.875rem; color: #9ca3af; margin-top: 8px; font-family: 'Inter', sans-serif; }
+        .button { background-color: var(--accent-pumpkin); color: white; padding: 12px 32px; border-radius: 10px; font-size: 0.95rem; font-weight: 500; text-decoration: none; box-shadow: 0 2px 6px rgba(255, 117, 24, 0.2); transition: all 0.3s ease; display: inline-block; }
+        .button:hover { background-color: var(--accent-cherry); } /* Hover'da Cherry Red */
 
-  /* CAROUSEL GENEL STİLLERİ */
-  .carousel { position: relative; width: 100%; overflow: hidden; border-radius: var(--carousel-radius); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); -webkit-tap-highlight-color: transparent; }
-  .carousel-inner { display: flex; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; cursor: grab; }
-  .carousel-inner.is-dragging { cursor: grabbing; }
-  .carousel-slide { min-width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-sizing: border-box; }
-  .carousel-controls { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; transform: translateY(-50%); padding: 0 10px; pointer-events: none; z-index: 3; opacity: 0; transition: opacity 0.3s ease-in-out; }
-  @media (hover: hover) and (pointer: fine) { .carousel:hover .carousel-controls { opacity: 1; } }
-  .carousel-controls.mobile-visible { opacity: 1; pointer-events: auto; }
-  .carousel-controls.mobile-visible button { pointer-events: all; }
-  .carousel-controls button { pointer-events: all; background: rgba(0, 0, 0, 0.2); color: rgba(255, 255, 255, 0.9); border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 1.1rem; font-weight: bold; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease; box-shadow: none; }
-  .carousel-controls button:hover { background: rgba(0, 0, 0, 0.4); color: #fff; transform: scale(1.05); }
-  .carousel-dots { position: absolute; bottom: 5px; left: 0; right: 0; text-align: center; z-index: 2; padding: 5px 0; }
-  .carousel-dot { display: inline-block; width: 8px; height: 8px; margin: 0 4px; background-color: rgba(0, 0, 0, 0.35); border-radius: 50%; cursor: pointer; border: none; padding: 0; transition: background-color 0.3s ease, transform 0.2s ease; }
-  .carousel-dot:hover { background-color: rgba(0, 0, 0, 0.5); transform: scale(1.1); }
-  .carousel-dot.active { background-color: var(--accent-pumpkin); transform: scale(1.2); }
-
-  /* AVANTAJ CAROUSEL'İNE ÖZEL STİLLER */
-  .benefit-carousel-container { margin: 40px 0; padding: 25px 15px; background-color: var(--accent-pumpkin-light); border-radius: 16px; text-align: center; position: relative; }
-  .benefit-carousel-logo { position: absolute; top: 20px; right: 20px; max-width: 70px; height: auto; /* border-radius kaldırıldı */ z-index: 5; }
-  .benefit-carousel-title { font-family: var(--font), sans-serif; font-size: 1.3rem; font-weight: 500; color: var(--text); text-align: center; margin-top: 0; margin-bottom: 20px; position: relative; padding-bottom: 8px; padding-left: 20px; padding-right: 80px; }
-  .benefit-carousel-title::after { content: ''; display: block; width: 40px; height: 2px; background-color: var(--accent-pumpkin); opacity: 0.7; margin: 8px auto 0 auto; border-radius: 1px; }
-  #benefitsCarousel { box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-radius: 10px; }
-  #benefitsCarousel .carousel-slide.benefit-slide { background-color: #fff; min-height: 180px; padding: 20px; display: flex; align-items: center; justify-content: center; }
-  .benefit-slide-content { text-align: center; color: var(--text); max-width: 95%; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; }
-  .benefit-slide .benefit-slide-header { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--accent-cherry); margin-bottom: 12px; line-height: 1.2; } /* Başlıklar Cherry Red */
-  .benefit-slide .benefit-slide-text { font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--muted); line-height: 1.5; margin-bottom: 5px; }
-  #benefitsCarousel .carousel-controls button { background: rgba(0, 0, 0, 0.3); }
-  #benefitsCarousel .carousel-controls button:hover { background: rgba(0, 0, 0, 0.5); }
-
-  /* ANKET STİLLERİ */
-  .survey-container {
-    background-color: #f8f9fa;
-    border: 1px solid #e9ecef;
-    border-radius: var(--carousel-radius);
-    padding: 35px 25px 30px 25px;
-    margin: 48px 0 24px;
-    text-align: center;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-    position: relative;
-  }
-  .survey-sponsor {
-    position: absolute;
-    top: 18px;
-    right: 22px;
-  }
-  .survey-sponsor img {
-    max-width: 70px;
-    height: auto;
-    display: block;
-    /* border-radius kaldırıldı */
-  }
-  .survey-container h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.7rem;
-    color: var(--text);
-    font-weight: 700;
-    position: relative;
-    padding-bottom: 12px;
-    margin-top: 32px;
-    margin-bottom: 25px;
-  }
-  .survey-container h3::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: var(--accent-pumpkin);
-    border-radius: 1.5px;
-    margin: 12px auto 0 auto;
-  }
-  .survey-question-area {
-    margin-bottom: 30px;
-  }
-  .survey-question {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.05rem;
-    color: var(--muted);
-    margin-bottom: 20px;
-    line-height: 1.65;
-    min-height: 50px;
-  }
-  .survey-options {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 520px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .survey-options li button {
-    display: block;
-    width: 100%;
-    padding: 15px 20px;
-    background-color: #fff;
-    border: 1px solid #dee2e6;
-    border-radius: 10px;
-    color: var(--text);
-    font-family: var(--font);
-    font-size: 0.95rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
-  }
-  .survey-options li button:hover:not(:disabled) {
-    background-color: var(--accent-pumpkin-light);
-    border-color: var(--accent-pumpkin);
-    transform: translateY(-2px) scale(1.01);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.06);
-  }
-  .survey-options li button.selected {
-    background-color: var(--selected-answer-bg);
-    border-color: var(--selected-answer-border);
-    color: var(--accent-pumpkin);
-  }
-  .survey-options li button:disabled {
-    opacity: 0.8;
-    cursor: default;
-  }
-  .survey-options li button:disabled:not(.selected) {
-    opacity: 0.6;
-    background-color: #f0f0f0;
-    border-color: #e0e0e0;
-    transform: none;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-  }
-  .survey-feedback-message {
-    margin-top: 15px;
-    font-size: 0.9rem;
-    color: var(--accent-cherry); /* Geri bildirim Cherry Red */
-    min-height: 40px;
-    font-weight: 500;
-  }
-  .survey-navigation {
-    margin-top: 20px;
-  }
-  .survey-navigation button {
-    background-color: var(--accent-pumpkin);
-    color: white;
-    padding: 10px 25px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  .survey-navigation button:hover:not(:disabled) {
-    background-color: var(--accent-cherry); /* Hover'da Cherry Red */
-  }
-  .survey-navigation button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  .survey-final-message {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    color: var(--text);
-    margin-top: 20px;
-    font-weight: 600;
-  }
-  .survey-final-message strong {
-    color: var(--accent-pumpkin);
-  }
-
-  .integrated-cta-section { text-align: center; margin: 40px auto 20px auto; padding: 25px 0; position: relative; }
-  .integrated-cta-section::before { content: ''; display: block; width: 70px; height: 2.5px; background-color: var(--accent-pumpkin); opacity: 0.6; margin: 0 auto 30px auto; border-radius: 1px; }
-  .integrated-cta-section .cta-final-text { font-family: 'Inter', sans-serif; font-size: 1.18rem; line-height: 1.85; color: var(--text); margin-bottom: 30px; max-width: 620px; margin-left: auto; margin-right: auto; }
-  .integrated-cta-section .cta-final-text strong { color: var(--accent-cherry); font-weight: 600; } /* CTA'da strong Cherry Red */
-  .integrated-cta-section .button { padding: 14px 40px; font-size: 1.05rem; }
-  .main-logo { /* border-radius kaldırıldı */ }
+        /* ANKET STİLLERİ */
+        .survey-container {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: var(--carousel-radius);
+            padding: 35px 25px 30px 25px;
+            margin: 48px 0 24px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            position: relative;
+        }
+        .survey-sponsor {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+        }
+        .survey-sponsor img {
+            max-width: 70px;
+            height: auto;
+            display: block;
+            /* border-radius kaldırıldı */
+        }
+        .survey-container h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.7rem;
+            color: var(--text);
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 12px;
+            margin-top: 32px;
+            margin-bottom: 25px;
+        }
+        .survey-container h3::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-pumpkin);
+            border-radius: 1.5px;
+            margin: 12px auto 0 auto;
+        }
+        .survey-question-area {
+            margin-bottom: 30px;
+        }
+        .survey-question {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            color: var(--muted);
+            margin-bottom: 20px;
+            line-height: 1.65;
+            min-height: 50px;
+        }
+        .survey-options {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 520px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .survey-options li button {
+            display: block;
+            width: 100%;
+            padding: 15px 20px;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+        .survey-options li button:hover:not(:disabled) {
+            background-color: var(--accent-pumpkin-light);
+            border-color: var(--accent-pumpkin);
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.06);
+        }
+        .survey-options li button.selected {
+            background-color: var(--selected-answer-bg);
+            border-color: var(--selected-answer-border);
+            color: var(--accent-pumpkin);
+        }
+        .survey-options li button:disabled {
+            opacity: 0.8;
+            cursor: default;
+        }
+        .survey-options li button:disabled:not(.selected) {
+            opacity: 0.6;
+            background-color: #f0f0f0;
+            border-color: #e0e0e0;
+            transform: none;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+        .survey-feedback-message {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--accent-cherry); /* Geri bildirim Cherry Red */
+            min-height: 40px;
+            font-weight: 500;
+        }
+        .survey-navigation {
+            margin-top: 20px;
+        }
+        .survey-navigation button {
+            background-color: var(--accent-pumpkin);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .survey-navigation button:hover:not(:disabled) {
+            background-color: var(--accent-cherry); /* Hover'da Cherry Red */
+        }
+        .survey-navigation button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .survey-final-message {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-top: 20px;
+            font-weight: 600;
+        }
+        .survey-final-message strong {
+            color: var(--accent-pumpkin);
+        }
+        .integrated-cta-section { text-align: center; margin: 40px auto 20px auto; padding: 25px 0; position: relative; }
+        .integrated-cta-section::before { content: ''; display: block; width: 70px; height: 2.5px; background-color: var(--accent-pumpkin); opacity: 0.6; margin: 0 auto 30px auto; border-radius: 1px; }
+        .integrated-cta-section .cta-final-text { font-family: 'Inter', sans-serif; font-size: 1.18rem; line-height: 1.85; color: var(--text); margin-bottom: 30px; max-width: 620px; margin-left: auto; margin-right: auto; }
+        .integrated-cta-section .cta-final-text strong { color: var(--accent-cherry); font-weight: 600; } /* CTA'da strong Cherry Red */
+        .integrated-cta-section .button { padding: 14px 40px; font-size: 1.05rem; }
 
 
-  @media (max-width: 768px) {
-    h1 { font-size: 1.8rem; }
-    h2 { font-size: 1.3rem; }
-    .benefit-carousel-container { padding-top: 20px; padding-bottom: 20px; padding-left: 10px; padding-right: 10px; margin-top: 30px; margin-bottom: 30px; }
-    .benefit-carousel-logo { max-width: 50px; top: 15px; right: 15px; }
-    .benefit-carousel-title { font-size: 1.15rem; padding-left: 10px; padding-right: 65px; margin-bottom: 15px; }
-    #benefitsCarousel .carousel-slide.benefit-slide { min-height: 170px; padding: 15px; }
-    .benefit-slide .benefit-slide-header { font-size: 1.2rem; }
-    .benefit-slide .benefit-slide-text { font-size: 0.85rem; }
-    .carousel-controls { padding: 0 5px; }
-    .carousel-controls button { width: 32px; height: 32px; font-size: 1rem; }
-    .carousel-dots { bottom: 2px; }
-    .carousel-dot { width: 7px; height: 7px; margin: 0 3px; }
-    .container { padding: 16px 16px 24px; }
-    .survey-container { padding: 25px 15px 20px 15px; margin-bottom: 20px; }
-    .survey-sponsor img { max-width: 50px; top:10px; right: 10px;}
-  }
-  </style>
+        .main-logo { /* border-radius kaldırıldı */ }
+
+
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.3rem; }
+            .container { padding: 16px 16px 24px; }
+            .survey-container { padding: 25px 15px 20px 15px; margin-bottom: 20px; }
+            .survey-sponsor img { max-width: 50px; top:10px; right: 10px;}
+        }
+    </style>
 </head>
 <body>
-  <div class="progress-bar" id="progressBar"></div>
-  <div class="container">
-    <h1>Dışarıda Yemek Yerken Hesabı Dert Etmeyenler Kulübü: GastroClub, Albaraka Mobil’de!</h1>
-    <div style="display: flex; align-items: center; gap: 8px; margin: 8px 0 16px 0;">
-      <div style="max-width: 120px; max-height: 50px; display: flex; align-items: center;">
-        <img src="https://i.ibb.co/bjt5HNWM/image-20-removebg-preview.png" alt="Sponsor Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;" class="main-logo">
-      </div>
-      <span style="font-size: 0.88rem; color: #4b5563; font-weight: 500;">ayrıcalığıyla</span>
-    </div>
-
-    <p>Yoğun bir iş gününün sonunda dostlarla yemeğe çıkmak gibisi yok. Güzel bir masa, lezzetli yemekler, keyifli bir sohbet… Ama itiraf edelim, o akşamın tadını bazen hesap bozabiliyor. İşte tam da bu yüzden Albaraka Mobil kullanıcılarına özel yepyeni bir ayrıcalık var: GastroClub üyeliği.</p>
-    <ul>
-        <li><strong class="highlighted-benefit">%50’ye varan indirimlerle</strong> 12.000’den fazla seçkin restoranda avantaj,</li>
-        <li>Evin yolunu tutmadan halledilen <strong class="highlighted-benefit">kuru temizleme hizmetleri</strong>,</li>
-        <li>Ve iş ya da tatil için ihtiyacınız olan <strong class="highlighted-benefit">indirimli araç kiralama</strong> seçenekleri...</li>
-    </ul>
-    <p>Hepsi tek bir mobil uygulamayla, üstelik hiçbir ekstra adım gerektirmeden. Bu fırsatlar, alışveriş kuponlarından fışkıran promosyonlar gibi değil. GastroClub, özellikle belli bir yaşam standardına sahip kullanıcılar için tasarlanmış bir ayrıcalıklar dünyası.</p>
-    <p>Albaraka Mobil ile artık bu dünyanın kapısı cebinizde.</p>
-
-    <div class="benefit-carousel-container">
-        <img src="https://i.ibb.co/bjt5HNWM/image-20-removebg-preview.png" alt="Sponsor Logo" class="benefit-carousel-logo">
-        <h3 class="benefit-carousel-title">GastroClub & Albaraka Mobil: Hayatına Değer Katan Avantajlar</h3>
-        <div class="carousel" id="benefitsCarousel">
-            <div class="carousel-inner">
-                <div class="carousel-slide benefit-slide">
-                    <div class="benefit-slide-content">
-                        <p class="benefit-slide-header">%50’ye Varan İndirimlerle Lüksü Daha Uygun Yaşa</p>
-                        <p class="benefit-slide-text">İstanbul, Ankara, İzmir ve daha birçok şehirde 12.000+ seçkin restoranda geçerli avantajlarla dışarıda yemek artık daha keyifli ve ekonomik.</p>
-                    </div>
-                </div>
-                <div class="carousel-slide benefit-slide">
-                    <div class="benefit-slide-content">
-                        <p class="benefit-slide-header">Kuru Temizleme Hizmetlerinde Ekstra Avantaj</p>
-                        <p class="benefit-slide-text">Yoğun iş temponda gömleklerini dert etme. GastroClub üyeliğiyle anlaşmalı kuru temizleme noktalarında özel indirim seni bekliyor.</p>
-                    </div>
-                </div>
-                <div class="carousel-slide benefit-slide">
-                    <div class="benefit-slide-content">
-                        <p class="benefit-slide-header">İndirimli Araç Kiralama İle Yol Senin</p>
-                        <p class="benefit-slide-text">İş seyahatleri ya da hafta sonu kaçamakları için araç kiralarken avantajlı fiyatlar sayesinde bütçeni yormazsın.</p>
-                    </div>
-                </div>
-                <div class="carousel-slide benefit-slide">
-                    <div class="benefit-slide-content">
-                        <p class="benefit-slide-header">Şehrin En Popüler Mekanlarına Öncelikli Erişim</p>
-                        <p class="benefit-slide-text">GastroClub üyesi olarak, rezervasyonlarda öncelik ve seçkin mekanlarda yer garantisi gibi “gizli” avantajlardan yararlanabilirsin.</p>
-                    </div>
-                </div>
-                <div class="carousel-slide benefit-slide">
-                    <div class="benefit-slide-content">
-                        <p class="benefit-slide-header">Hayatını Kolaylaştıran Ayrıcalıklar Tek Uygulamada</p>
-                        <p class="benefit-slide-text">Albaraka Mobil üzerinden GastroClub’a ulaşmak, kampanyaları takip etmek ve faydalanmak son derece kolay — ayrı ayrı üyelikle uğraşmazsın.</p>
-                    </div>
-                </div>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="container">
+        <h1>Albaraka Mobil’de Şimdi “Seçkin Fırsatlar” Zamanı!</h1>
+        <p style="font-size: 1.15rem; color: var(--text); font-weight: 500; margin-top: 15px; margin-bottom: 25px; text-align: center;">Hayatın her anında ayrıcalıklı hissetmek isteyenlere özel bir dünya Albaraka’da seni bekliyor.</p>
+        <div style="display: flex; align-items: center; gap: 8px; margin: 8px 0 16px 0;">
+            <div style="max-width: 120px; max-height: 50px; display: flex; align-items: center;">
+                <img src="https://i.ibb.co/bjt5HNWM/image-20-removebg-preview.png" alt="Albaraka Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;" class="main-logo">
             </div>
-            <div class="carousel-controls">
-                <button class="prev" aria-label="Önceki Avantaj">←</button>
-                <button class="next" aria-label="Sonraki Avantaj">→</button>
+            <span style="font-size: 0.88rem; color: #4b5563; font-weight: 500;">ayrıcalığıyla</span>
+        </div>
+
+        <p>Zaten günümüz dünyasında bankacılık yalnızca para transferiyle sınırlı değil. Artık “müşteri olmak” demek, hayatın her alanında sana özel ayrıcalıklarla yaşamak demek. Albaraka Türk de işte tam bu vizyonla, sıradan bir bankacılık deneyimini yepyeni bir boyuta taşıyor.</p>
+        <p>Albaraka Mobil’de yıl sonuna kadar geçerli olan “Seçkin Fırsatlar” kampanyası, gündelik alışkanlıklarını minik sürprizlere dönüştürüyor.</p>
+        <ul>
+            <li>🛫 <strong class="highlighted-benefit">İstanbul Havalimanı'nda %25’e varan lounge indirimleri</strong>,</li>
+            <li>🍽️ <strong class="highlighted-benefit">1200’den fazla restoranda %30’a varan ayrıcalıklı menüler</strong>,</li>
+            <li>🛒 <strong class="highlighted-benefit">Market alışverişlerinde dönemsel kampanyalar ve sürpriz indirimler</strong>,</li>
+            <li>🧥 <strong class="highlighted-benefit">Seçkin giyim markalarında özel fırsatlar</strong>,</li>
+            <li>🧼 <strong class="highlighted-benefit">Kuru temizleme hizmetlerinde %50’ye varan indirim</strong>…</li>
+        </ul>
+        <p>Kısacası: dışarı çıkarken, alışveriş yaparken, seyahate hazırlanırken – yanında hep Albaraka var. Üstelik fırsatlar sabit değil; her ay yenileri ekleniyor, avantajlar büyüyor.</p>
+        <p>Tek yapman gereken, Albaraka Mobil’e giriş yapmak ve “Başvurular > Tüm Kampanyalar > Seçkin Fırsatlar Albaraka’da” adımlarını takip etmek. Kodu al, kullan ve anında faydalan.</p>
+
+        <p>Bu ayrıcalıklı dünyanın en güzel yanı mı? Herkesin ilgisini çekecek bir fırsat mutlaka var. Senin için en cazip olan hangisi, gel birlikte bakalım 👇</p>
+
+        <div class="survey-container" id="preferenceSurvey">
+            <div class="survey-sponsor">
+                <img src="https://i.ibb.co/bjt5HNWM/image-20-removebg-preview.png" alt="Albaraka Logo">
             </div>
-            <div class="carousel-dots"></div>
+            <h3>Mini Anket:</h3>
+            <div class="survey-question-area">
+                <p class="survey-question" id="surveyQuestionText"></p>
+                <ul class="survey-options" id="surveyOptionsList">
+                </ul>
+            </div>
+            <div class="survey-feedback-message" id="surveyFeedbackText" style="display: none;"></div>
+            <!-- Geri bildirim butonu kaldırıldı -->
+            <div class="survey-final-message" id="surveyFinalMessage" style="display: none;"></div>
+        </div>
+
+        <div class="integrated-cta-section">
+            <p class="cta-final-text">Seçkin bir yaşamın yolu Albaraka Mobil’den geçiyor. Uygulamayı aç, fırsatları keşfet.</p>
+            <a class="button" href="https://www.albaraka.com.tr/tr" target="_blank">Hemen Keşfet</a>
         </div>
     </div>
-
-    <h2>Kimler İçin?</h2>
-    <p>Ofisten kafasını kaldıramayan yöneticiler, her dakikası planlı KOBİ sahipleri, "Bugün ne yesek?" sorusuna cevabı olan ama hesabı düşünmek istemeyen herkes için.</p>
-    <p>Ama esas hedef, yaşamını sadeleştirmek isteyen, zamanı kadar bütçesini de iyi yönetenler. Yani aslında, <strong>senin gibi biri</strong>.</p>
-
-    <h2>Neden Albaraka?</h2>
-    <p>Çünkü Albaraka, bankacılığı sadece finansal işlemlerden ibaret görmeyen bir anlayışa sahip. Hayatın hızına uyum sağlamak isteyen kullanıcıları için bankacılığın dışına taşan çözümler sunuyor. GastroClub iş birliği de tam olarak bu anlayışın bir sonucu.</p>
-
-    <div class="survey-container" id="preferenceSurvey">
-      <div class="survey-sponsor">
-        <img src="https://i.ibb.co/bjt5HNWM/image-20-removebg-preview.png" alt="Sponsor Logo">
-      </div>
-      <h3>En Çok Hangi Avantajı Beğendin?</h3>
-      <div class="survey-question-area">
-          <p class="survey-question" id="surveyQuestionText"></p>
-          <ul class="survey-options" id="surveyOptionsList">
-          </ul>
-      </div>
-      <div class="survey-feedback-message" id="surveyFeedbackText" style="display: none;"></div>
-      <div class="survey-navigation">
-          <button type="button" id="submitSurveyButton" style="display: none;">Geri Bildirimini Gönder</button>
-      </div>
-      <div class="survey-final-message" id="surveyFinalMessage" style="display: none;"></div>
-    </div>
-
-    <p id="surveyBasedDynamicText">Albaraka Mobil'deki GastroClub avantajlarından hangisinin sana daha çok hitap ettiğini merak ediyoruz. Seçimini yaparak bize yardımcı olabilirsin!</p>
-
-    <div class="integrated-cta-section">
-      <p class="cta-final-text">Albaraka Mobil ile GastroClub'un sunduğu tüm bu ayrıcalıkları keşfetmek ve hayatını kolaylaştırmak için daha ne bekliyorsun? <strong>Hemen Albaraka Mobil'i indir</strong> ve avantajlardan yararlanmaya başla!</p>
-      <a class="button" href="https://www.albaraka.com.tr/tr" target="_blank">Hemen Keşfet</a>
-    </div>
-  </div>
 <script>
-  // Progress Bar Script
-  const progressBar = document.getElementById('progressBar');
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-    progressBar.style.width = `${scrollPercent}%`;
-  });
-
-  // CAROUSEL SCRIPT
-  function initializeCarousel(carouselId) {
-    const carousel = document.getElementById(carouselId);
-    if (!carousel) return;
-    const carouselInner = carousel.querySelector('.carousel-inner');
-    const carouselControls = carousel.querySelector('.carousel-controls');
-    const carouselSlides = carousel.querySelectorAll('.carousel-slide');
-    const totalCarouselSlides = carouselSlides.length;
-    if (totalCarouselSlides === 0) return;
-    let currentCarouselIndex = 0;
-    const dotsContainer = carousel.querySelector('.carousel-dots');
-    let dots = [];
-    let isDragging = false;
-    let touchStartX = 0;
-    let currentTranslate = 0;
-    let startTranslate = 0;
-    const swipeThreshold = 50;
-    const slideWidth = () => carousel.offsetWidth;
-    const isTouchDevice = () => ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-    function updateDots() { if (!dotsContainer) return; dots.forEach((dot, idx) => { dot.classList.remove('active'); if (idx === currentCarouselIndex) { dot.classList.add('active'); } }); }
-    function setTransform(translateX) { carouselInner.style.transform = `translateX(${translateX}px)`; }
-    function showCarouselSlide(index, animate = true) { if (index >= totalCarouselSlides) index = 0; else if (index < 0) index = totalCarouselSlides - 1; currentCarouselIndex = index; const targetTranslate = -currentCarouselIndex * slideWidth(); carouselInner.style.transition = animate ? 'transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1)' : 'none'; setTransform(targetTranslate); currentTranslate = targetTranslate; updateDots(); }
-    const prevButton = carousel.querySelector('.prev'); const nextButton = carousel.querySelector('.next');
-    if (prevButton && nextButton) { prevButton.addEventListener('click', () => { showCarouselSlide(currentCarouselIndex - 1); }); nextButton.addEventListener('click', () => { showCarouselSlide(currentCarouselIndex + 1); }); }
-    if (dotsContainer) { dotsContainer.innerHTML = ''; dots = []; for (let i = 0; i < totalCarouselSlides; i++) { const dot = document.createElement('button'); dot.classList.add('carousel-dot'); dot.setAttribute('aria-label', `${i + 1}. slayda git`); dot.addEventListener('click', () => { showCarouselSlide(i); }); dotsContainer.appendChild(dot); dots.push(dot); } }
-    if (carouselInner) {
-      carouselInner.addEventListener('touchstart', (event) => { if (event.touches.length > 1 || isDragging) return; isDragging = true; touchStartX = event.touches[0].clientX; startTranslate = currentTranslate; carouselInner.style.transition = 'none'; carouselInner.classList.add('is-dragging'); }, { passive: true });
-      carouselInner.addEventListener('touchmove', (event) => { if (!isDragging || event.touches.length > 1) return; const touchCurrentX = event.touches[0].clientX; const deltaX = touchCurrentX - touchStartX; currentTranslate = startTranslate + deltaX; setTransform(currentTranslate); }, { passive: true });
-      const handleTouchEnd = () => { if (!isDragging) return; isDragging = false; carouselInner.classList.remove('is-dragging'); carouselInner.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1)'; const swipeDistance = currentTranslate - startTranslate; if (Math.abs(swipeDistance) > swipeThreshold) { showCarouselSlide(swipeDistance < 0 ? currentCarouselIndex + 1 : currentCarouselIndex - 1); } else { showCarouselSlide(currentCarouselIndex); } };
-      carouselInner.addEventListener('touchend', handleTouchEnd); carouselInner.addEventListener('touchcancel', handleTouchEnd);
-    }
-    if (isTouchDevice() && carouselControls) { let controlsVisibleOnTouch = false; const showControlsOnTouch = () => { if(!controlsVisibleOnTouch && carouselControls) { carouselControls.classList.add('mobile-visible'); } }; carousel.addEventListener('click', showControlsOnTouch); }
-    showCarouselSlide(0, false);
-    let resizeTimeout; window.addEventListener('resize', () => { clearTimeout(resizeTimeout); resizeTimeout = setTimeout(() => { showCarouselSlide(currentCarouselIndex, false); }, 250); });
-  }
-
-  // PREFERENCE SURVEY SCRIPT
-  const surveyContainer = document.getElementById('preferenceSurvey');
-  const surveyQuestionTextEl = document.getElementById('surveyQuestionText');
-  const surveyOptionsListEl = document.getElementById('surveyOptionsList');
-  const surveyFeedbackTextEl = document.getElementById('surveyFeedbackText');
-  const submitSurveyButtonEl = document.getElementById('submitSurveyButton');
-  const surveyFinalMessageEl = document.getElementById('surveyFinalMessage');
-  const surveyBasedDynamicTextEl = document.getElementById('surveyBasedDynamicText');
-
-  const surveyData = {
-      question: "Albaraka Mobil'deki GastroClub avantajlarından en çok hangisi hoşuna gitti?",
-      options: [
-          "%50’ye Varan İndirimlerle Lüksü Daha Uygun Yaşa",
-          "Kuru Temizleme Hizmetlerinde Ekstra Avantaj",
-          "İndirimli Araç Kiralama İle Yol Senin",
-          "Şehrin En Popüler Mekanlarına Öncelikli Erişim",
-          "Hayatını Kolaylaştıran Ayrıcalıklar Tek Uygulamada"
-      ]
-  };
-
-  let answerSelected = false;
-  let selectedSurveyOptionButton = null;
-
-  function loadSurveyQuestion() {
-    answerSelected = false;
-    surveyQuestionTextEl.textContent = surveyData.question;
-    surveyOptionsListEl.innerHTML = '';
-    surveyData.options.forEach(optionText => {
-        const li = document.createElement('li');
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.textContent = optionText;
-        button.addEventListener('click', () => handleSurveySelection(button, optionText));
-        li.appendChild(button);
-        surveyOptionsListEl.appendChild(li);
+    // Progress Bar Script
+    const progressBar = document.getElementById('progressBar');
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        progressBar.style.width = `${scrollPercent}%`;
     });
-    surveyFeedbackTextEl.style.display = 'none';
-    submitSurveyButtonEl.style.display = 'none';
-    if (selectedSurveyOptionButton) {
-        selectedSurveyOptionButton.classList.remove('selected');
-        selectedSurveyOptionButton = null;
+
+    // PREFERENCE SURVEY SCRIPT
+    const surveyContainer = document.getElementById('preferenceSurvey');
+    const surveyQuestionTextEl = document.getElementById('surveyQuestionText');
+    const surveyOptionsListEl = document.getElementById('surveyOptionsList');
+    const surveyFeedbackTextEl = document.getElementById('surveyFeedbackText');
+    // submitSurveyButtonEl kaldırıldı
+    // const submitSurveyButtonEl = document.getElementById('submitSurveyButton');
+    // surveyFinalMessageEl kaldırıldı
+    // const surveyFinalMessageEl = document.getElementById('surveyFinalMessage');
+
+    const surveyData = {
+        question: "En çok hangi fırsat ilgini çekti?",
+        options: [
+            "Restoran indirimleri",
+            "Market alışverişi kampanyaları",
+            "Giyim ve bakım fırsatları",
+            "Havaalanı ayrıcalıkları",
+            "Kuru temizleme avantajları"
+        ]
+    };
+
+    let selectedSurveyOptionButton = null; // answerSelected ve submitSurveyButtonEl'e gerek kalmadı
+
+    function loadSurveyQuestion() {
+        surveyQuestionTextEl.textContent = surveyData.question;
+        surveyOptionsListEl.innerHTML = '';
+        surveyData.options.forEach(optionText => {
+            const li = document.createElement('li');
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.textContent = optionText;
+            button.addEventListener('click', () => handleSurveySelection(button, optionText));
+            li.appendChild(button);
+            surveyOptionsListEl.appendChild(li);
+        });
+        surveyFeedbackTextEl.style.display = 'none'; // İlk yüklemede geri bildirim gizli
+        // submitSurveyButtonEl.style.display = 'none'; // Buton kaldırıldığı için bu satıra gerek kalmadı
+        if (selectedSurveyOptionButton) {
+            selectedSurveyOptionButton.classList.remove('selected');
+            selectedSurveyOptionButton = null;
+        }
+        // Tüm seçenekleri tekrar etkinleştir
+        surveyOptionsListEl.querySelectorAll('button').forEach(btn => btn.disabled = false);
     }
-  }
 
-  function handleSurveySelection(clickedButton, selectedOptionText) {
-    // Önceki seçimi temizle
-    if (selectedSurveyOptionButton) {
-        selectedSurveyOptionButton.classList.remove('selected');
+    function handleSurveySelection(clickedButton, selectedOptionText) {
+        // Önceki seçimi temizle
+        if (selectedSurveyOptionButton) {
+            selectedSurveyOptionButton.classList.remove('selected');
+        }
+        // Yeni seçimi yap
+        clickedButton.classList.add('selected');
+        selectedSurveyOptionButton = clickedButton;
+
+        // Tüm seçenekleri devre dışı bırak
+        surveyOptionsListEl.querySelectorAll('button').forEach(btn => btn.disabled = true);
+
+        // Dinamik geri bildirim mesajını oluştur (daha native ve fayda odaklı)
+        let dynamicFeedback = `Harika bir seçim! ${selectedOptionText} gibi daha birçok fırsat Albaraka Mobil'de seni bekliyor. Hemen keşfetmeye başla!`;
+        surveyFeedbackTextEl.textContent = dynamicFeedback;
+
+        surveyFeedbackTextEl.style.color = 'var(--accent-cherry)';
+        surveyFeedbackTextEl.style.display = 'block';
+        
+        // submitSurveyButtonEl ile ilgili satırlar kaldırıldı
     }
-    // Yeni seçimi yap
-    clickedButton.classList.add('selected');
-    selectedSurveyOptionButton = clickedButton;
 
-    // Dinamik geri bildirim mesajı oluştur
-    let dynamicFeedback = `"${selectedOptionText}" harika bir seçim! Bu ve bunun gibi daha birçok ayrıcalık Albaraka Mobil'de seni bekliyor. Keşfetmeye devam et!`;
-    surveyFeedbackTextEl.textContent = dynamicFeedback;
+    // submitSurveyButtonEl.addEventListener('click', ...) kaldırıldı
+    // function showSurveyFinalMessage() kaldırıldı
 
-    surveyFeedbackTextEl.style.color = 'var(--accent-cherry)';
-    surveyFeedbackTextEl.style.display = 'block';
-    
-    submitSurveyButtonEl.style.display = 'inline-block';
-    answerSelected = true;
-  }
-
-  submitSurveyButtonEl.addEventListener('click', () => {
-    surveyOptionsListEl.querySelectorAll('button').forEach(btn => btn.disabled = true);
-    submitSurveyButtonEl.disabled = true;
-    showSurveyFinalMessage();
-  });
-
-  function showSurveyFinalMessage() {
-    surveyQuestionTextEl.style.display = 'none';
-    surveyOptionsListEl.style.display = 'none';
-    surveyFeedbackTextEl.style.display = 'none'; 
-    submitSurveyButtonEl.style.display = 'none';
-
-    surveyFinalMessageEl.innerHTML = `<strong>Katılımın için teşekkür ederiz!</strong> Tercihin bizim için değerli.`;
-    surveyFinalMessageEl.style.display = 'block';
-
-    surveyBasedDynamicTextEl.innerHTML = "Görüşlerini paylaştığın için teşekkürler! Albaraka Mobil ile GastroClub avantajlarından dilediğince yararlanabilirsin. Daha fazla bilgi ve kampanya için uygulamayı takip etmeye devam et!";
-    surveyBasedDynamicTextEl.style.fontWeight = 'normal';
-    surveyBasedDynamicTextEl.style.color = 'var(--muted)';
-  }
-
-  if (surveyContainer) {
-    loadSurveyQuestion();
-  } else {
-    if(surveyBasedDynamicTextEl) surveyBasedDynamicTextEl.textContent = "Albaraka Mobil'deki GastroClub avantajları hakkında ne düşündüğünü merak ediyoruz!";
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    initializeCarousel('benefitsCarousel');
-  });
+    if (surveyContainer) {
+        loadSurveyQuestion();
+    }
 </script>
 </body>
 </html>
