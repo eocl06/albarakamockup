@@ -41,7 +41,7 @@
             width: 0;
             background: linear-gradient(to right, var(--accent-cherry), var(--accent-pumpkin));
             border-radius: 2px;
-            box-shadow: 0 0 6px rgba(255, 117, 24, 0.3); /* Pumpkin orange gölge */
+            box-shadow: 0 0 6px rgba(255, 117, 24, 0.3);
             z-index: 1001;
             transition: width 0.25s ease-out;
         }
@@ -63,6 +63,7 @@
             font-size: 2.25rem;
             font-family: 'Playfair Display', serif;
             color: var(--text);
+            text-align: center;
         }
         h2 {
             font-size: 1.5rem;
@@ -74,6 +75,7 @@
             margin-bottom: 20px;
             color: var(--muted);
             font-family: 'Inter', sans-serif;
+            text-align: justify;
         }
         p strong {
             color: var(--text);
@@ -92,7 +94,7 @@
         .image-block img { width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); }
         .caption { text-align: center; font-size: 0.875rem; color: #9ca3af; margin-top: 8px; font-family: 'Inter', sans-serif; }
         .button { background-color: var(--accent-pumpkin); color: white; padding: 12px 32px; border-radius: 10px; font-size: 0.95rem; font-weight: 500; text-decoration: none; box-shadow: 0 2px 6px rgba(255, 117, 24, 0.2); transition: all 0.3s ease; display: inline-block; }
-        .button:hover { background-color: var(--accent-cherry); } /* Hover'da Cherry Red */
+        .button:hover { background-color: var(--accent-cherry); }
 
         /* ANKET STİLLERİ */
         .survey-container {
@@ -114,7 +116,6 @@
             max-width: 70px;
             height: auto;
             display: block;
-            /* border-radius kaldırıldı */
         }
         .survey-container h3 {
             font-family: 'Playfair Display', serif;
@@ -145,6 +146,7 @@
             margin-bottom: 20px;
             line-height: 1.65;
             min-height: 50px;
+            text-align: center;
         }
         .survey-options {
             list-style: none;
@@ -196,12 +198,14 @@
         .survey-feedback-message {
             margin-top: 15px;
             font-size: 0.9rem;
-            color: var(--accent-cherry); /* Geri bildirim Cherry Red */
+            color: var(--muted);
             min-height: 40px;
             font-weight: 500;
         }
-        .survey-navigation {
-            margin-top: 20px;
+        /* <<< DEĞİŞTİRİLDİ: Yeni vurgu için span.highlight-red stili eklendi */
+        .highlight-red {
+            color: var(--accent-cherry);
+            font-weight: 600;
         }
         .survey-navigation button {
             background-color: var(--accent-pumpkin);
@@ -215,7 +219,7 @@
             transition: background-color 0.2s ease;
         }
         .survey-navigation button:hover:not(:disabled) {
-            background-color: var(--accent-cherry); /* Hover'da Cherry Red */
+            background-color: var(--accent-cherry);
         }
         .survey-navigation button:disabled {
             background-color: #ccc;
@@ -228,23 +232,19 @@
             margin-top: 20px;
             font-weight: 600;
         }
-        .survey-final-message strong {
-            color: var(--accent-pumpkin);
-        }
         .integrated-cta-section { text-align: center; margin: 40px auto 20px auto; padding: 25px 0; position: relative; }
         .integrated-cta-section::before { content: ''; display: block; width: 70px; height: 2.5px; background-color: var(--accent-pumpkin); opacity: 0.6; margin: 0 auto 30px auto; border-radius: 1px; }
-        .integrated-cta-section .cta-final-text { font-family: 'Inter', sans-serif; font-size: 1.18rem; line-height: 1.85; color: var(--text); margin-bottom: 30px; max-width: 620px; margin-left: auto; margin-right: auto; }
-        .integrated-cta-section .cta-final-text strong { color: var(--accent-cherry); font-weight: 600; } /* CTA'da strong Cherry Red */
+        .integrated-cta-section .cta-final-text { font-family: 'Inter', sans-serif; font-size: 1.18rem; line-height: 1.85; color: var(--text); margin-bottom: 30px; max-width: 620px; margin-left: auto; margin-right: auto; text-align: center;}
+        .integrated-cta-section .cta-final-text strong { color: var(--accent-cherry); font-weight: 600; }
         .integrated-cta-section .button { padding: 14px 40px; font-size: 1.05rem; }
 
-
-        .main-logo { /* border-radius kaldırıldı */ }
-
+        .main-logo { }
 
         @media (max-width: 768px) {
             h1 { font-size: 1.8rem; }
             h2 { font-size: 1.3rem; }
             .container { padding: 16px 16px 24px; }
+            p { text-align: left; }
             .survey-container { padding: 25px 15px 20px 15px; margin-bottom: 20px; }
             .survey-sponsor img { max-width: 50px; top:10px; right: 10px;}
         }
@@ -254,7 +254,7 @@
     <div class="progress-bar" id="progressBar"></div>
     <div class="container">
         <h1>Albaraka Mobil’de Şimdi “Seçkin Fırsatlar” Zamanı!</h1>
-        <p style="font-size: 1.15rem; color: var(--text); font-weight: 500; margin-top: 15px; margin-bottom: 25px; text-align: center;">Hayatın her anında ayrıcalıklı hissetmek isteyenlere özel bir dünya Albaraka’da seni bekliyor.</p>
+        <p style="font-size: 1.15rem; color: var(--text); font-weight: 500; margin-top: 15px; margin-bottom: 25px; text-align: left;">Hayatın her anında ayrıcalıklı hissetmek isteyenlere özel bir dünya Albaraka’da seni bekliyor.</p>
         <div style="display: flex; align-items: center; gap: 8px; margin: 8px 0 16px 0;">
             <div style="max-width: 120px; max-height: 50px; display: flex; align-items: center;">
                 <img src="https://i.ibb.co/bjt5HNWM/image-20-removebg-preview.png" alt="Albaraka Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;" class="main-logo">
@@ -287,7 +287,6 @@
                 </ul>
             </div>
             <div class="survey-feedback-message" id="surveyFeedbackText" style="display: none;"></div>
-            <!-- Geri bildirim butonu kaldırıldı -->
             <div class="survey-final-message" id="surveyFinalMessage" style="display: none;"></div>
         </div>
 
@@ -311,10 +310,6 @@
     const surveyQuestionTextEl = document.getElementById('surveyQuestionText');
     const surveyOptionsListEl = document.getElementById('surveyOptionsList');
     const surveyFeedbackTextEl = document.getElementById('surveyFeedbackText');
-    // submitSurveyButtonEl kaldırıldı
-    // const submitSurveyButtonEl = document.getElementById('submitSurveyButton');
-    // surveyFinalMessageEl kaldırıldı
-    // const surveyFinalMessageEl = document.getElementById('surveyFinalMessage');
 
     const surveyData = {
         question: "En çok hangi fırsat ilgini çekti?",
@@ -327,7 +322,7 @@
         ]
     };
 
-    let selectedSurveyOptionButton = null; // answerSelected ve submitSurveyButtonEl'e gerek kalmadı
+    let selectedSurveyOptionButton = null;
 
     function loadSurveyQuestion() {
         surveyQuestionTextEl.textContent = surveyData.question;
@@ -341,40 +336,29 @@
             li.appendChild(button);
             surveyOptionsListEl.appendChild(li);
         });
-        surveyFeedbackTextEl.style.display = 'none'; // İlk yüklemede geri bildirim gizli
-        // submitSurveyButtonEl.style.display = 'none'; // Buton kaldırıldığı için bu satıra gerek kalmadı
+        surveyFeedbackTextEl.style.display = 'none';
         if (selectedSurveyOptionButton) {
             selectedSurveyOptionButton.classList.remove('selected');
             selectedSurveyOptionButton = null;
         }
-        // Tüm seçenekleri tekrar etkinleştir
         surveyOptionsListEl.querySelectorAll('button').forEach(btn => btn.disabled = false);
     }
 
     function handleSurveySelection(clickedButton, selectedOptionText) {
-        // Önceki seçimi temizle
         if (selectedSurveyOptionButton) {
             selectedSurveyOptionButton.classList.remove('selected');
         }
-        // Yeni seçimi yap
         clickedButton.classList.add('selected');
         selectedSurveyOptionButton = clickedButton;
 
-        // Tüm seçenekleri devre dışı bırak
         surveyOptionsListEl.querySelectorAll('button').forEach(btn => btn.disabled = true);
 
-        // Dinamik geri bildirim mesajını oluştur (daha native ve fayda odaklı)
-        let dynamicFeedback = `Harika bir seçim! ${selectedOptionText} gibi daha birçok fırsat Albaraka Mobil'de seni bekliyor. Hemen keşfetmeye başla!`;
-        surveyFeedbackTextEl.textContent = dynamicFeedback;
-
-        surveyFeedbackTextEl.style.color = 'var(--accent-cherry)';
-        surveyFeedbackTextEl.style.display = 'block';
+        // <<< DEĞİŞTİRİLDİ: İsteğiniz üzerine vurgu cümlenin sonuna taşındı ve kırmızı yapıldı.
+        let dynamicFeedback = `Zevkli bir tercih. ${selectedOptionText} gibi nice ayrıcalık, <span class="highlight-red">Albaraka Mobil'in seçkin dünyasında</span> sizi bekliyor.`;
         
-        // submitSurveyButtonEl ile ilgili satırlar kaldırıldı
+        surveyFeedbackTextEl.innerHTML = dynamicFeedback;
+        surveyFeedbackTextEl.style.display = 'block';
     }
-
-    // submitSurveyButtonEl.addEventListener('click', ...) kaldırıldı
-    // function showSurveyFinalMessage() kaldırıldı
 
     if (surveyContainer) {
         loadSurveyQuestion();
