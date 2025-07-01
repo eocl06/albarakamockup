@@ -228,28 +228,27 @@
     <div class="container">
         <h1>Albaraka Mobil’de Şimdi “Seçkin Fırsatlar” Zamanı!</h1>
 
-        <p style="font-size: 1.15rem; color: var(--text); font-weight: 500; margin-top: 15px; margin-bottom: 25px; text-align: left;">Albaraka Mobil, hayatın her anına değer katan özel fırsatlarla karşında. Ayrıcalıklı yaşamak isteyenler için <strong>yepyeni bir dünya</strong> seni bekliyor.</p>
+        <p style="font-size: 1.15rem; color: var(--text); font-weight: 500; margin-top: 15px; margin-bottom: 25px; text-align: left;">Albaraka Mobil ile seçkin bir dünyaya adım atın. Havaalanından restorana, market alışverişinden giyime kadar yüzlerce markada <strong>size özel ayrıcalıklar</strong> sizi bekliyor.</p>
         
         <div class="image-block">
             <img src="https://i.ibb.co/hFjsb09b/image-29.jpg" alt="Albaraka Mobil'de Seçkin Fırsatlar">
         </div>
 
-        <p>Bugünün bankacılığı sadece para transferinden ibaret değil. Artık bir bankanın müşterisi olmak; alışverişten seyahate, yeme içmeden bakıma kadar pek çok alanda <strong>sana özel avantajlarla yaşamak</strong> anlamına geliyor.</p>
-        <p>Albaraka Türk, bu yeni nesil anlayışla klasik bankacılığı geride bırakıyor ve seni <strong>ayrıcalıklarla dolu yeni bir deneyime</strong> davet ediyor.</p>
-        <p>Albaraka Mobil’de yıl sonuna kadar geçerli “Seçkin Fırsatlar” kampanyasıyla, günlük rutinlerin <strong>keyifli sürprizlere</strong> dönüşüyor.</p>
+        <p>Albaraka Türk, klasik bankacılık anlayışını geride bırakarak sizi <strong>ayrıcalıklarla dolu yeni bir deneyime</strong> davet ediyor.</p>
+        <p><strong>28.05.2025 - 31.12.2025</strong> tarihleri arasında geçerli “Seçkin Fırsatlar” kampanyasıyla, günlük harcamalarınız <strong>keyifli avantajlara</strong> dönüşüyor.</p>
         
-        <p>İşte seni bekleyen fırsatlardan bazıları:</p>
+        <p>İşte GastroClub iş birliğiyle seni bekleyen fırsatlardan bazıları:</p>
         <ul>
-            <li>🛫 <strong class="highlighted-benefit">İstanbul Havalimanı'nda %25’e varan lounge indirimleri</strong></li>
-            <li>🍽️ <strong class="highlighted-benefit">1200’den fazla restoranda %30’a varan ayrıcalıklı menüler</strong></li>
-            <li>🛒 <strong class="highlighted-benefit">Market alışverişlerinde dönemsel kampanyalar ve sürpriz indirimler</strong></li>
-            <li>🧥 <strong class="highlighted-benefit">Seçkin giyim markalarında özel fırsatlar</strong></li>
+            <li>🍽️ <strong class="highlighted-benefit">1200’den fazla restoranda %30’a varan indirimler</strong></li>
             <li>🧼 <strong class="highlighted-benefit">Kuru temizleme hizmetlerinde %50’ye varan indirim</strong></li>
+            <li>🛒 <strong class="highlighted-benefit">Süpermarket alışverişlerinde özel kampanyalar</strong></li>
+            <li>🛫 <strong class="highlighted-benefit">Havaalanı ve seyahat harcamalarında özel indirimler</strong></li>
+            <li>🧥 <strong class="highlighted-benefit">Giyim ve teknoloji markalarında size özel fırsatlar</strong></li>
         </ul>
 
-        <p>Kısacası; ister dışarı çıkarken, ister alışverişte ya da seyahat hazırlığında olun, Albaraka <strong>her zaman yanında</strong>. Üstelik fırsatlar sabit değil; <strong>her ay yenileri ekleniyor, avantajlar büyüyor</strong>.</p>
+        <p>Bu ayrıcalıklardan yararlanmak için kullanım limiti bulunmuyor. Kampanyanın geçerli olduğu tüm marka, kafe ve restoranları ve indirim oranlarını Albaraka Mobil’de görebilirsiniz.</p>
         
-        <p>Albaraka Mobil’e giriş yap, “Başvurular > Tüm Kampanyalar > <strong>Seçkin Fırsatlar Albaraka’da</strong>” adımlarını takip et. Kampanya kodunu al, kullan ve avantajlardan hemen yararlanmaya başla.</p>
+        <p>Albaraka Mobil’e giriş yapın, “Başvurular > Tüm Kampanyalar > <strong>Seçkin Fırsatlar Albaraka’da</strong>” adımlarını takip ederek kampanya kodunuzu alın ve hemen kullanmaya başlayın.</p>
 
         <p>Bu ayrıcalıklar arasında mutlaka <strong>seni heyecanlandıracak bir fırsat</strong> var. Peki, hangisi sana daha cazip geliyor? <strong>Gel birlikte keşfedelim</strong> 👇</p>
 
@@ -292,14 +291,15 @@
     const surveyOptionsListEl = document.getElementById('surveyOptionsList');
     const surveyFeedbackTextEl = document.getElementById('surveyFeedbackText');
 
+    // ANKET VERİLERİ GÜNCELLENDİ
     const surveyData = {
-        question: "En çok hangi fırsat ilgini çekti?",
+        question: "Size özel bu fırsatlardan en çok hangisi ilginizi çekti?",
         options: [
-            "Restoran indirimleri",
+            "Restoranlarda %30'a varan indirimler",
             "Market alışverişi kampanyaları",
-            "Giyim ve bakım fırsatları",
-            "Havaalanı ayrıcalıkları",
-            "Kuru temizleme avantajları"
+            "Giyim ve teknoloji markalarındaki fırsatlar",
+            "Havaalanı ve seyahat ayrıcalıkları",
+            "Kuru temizlemede %50'ye varan indirim"
         ]
     };
 
@@ -334,7 +334,8 @@
 
         surveyOptionsListEl.querySelectorAll('button').forEach(btn => btn.disabled = true);
 
-        let dynamicFeedback = `Zevkli bir tercih. ${selectedOptionText} gibi nice ayrıcalık, <span class="highlight-red">Albaraka Mobil'in seçkin dünyasında</span> sizi bekliyor.`;
+        // Geri bildirim mesajı güncellendi
+        let dynamicFeedback = `Harika bir seçim! ${selectedOptionText} ve daha fazlası, <span class="highlight-red">Albaraka Mobil'in seçkin dünyasında</span> sizi bekliyor.`;
         
         surveyFeedbackTextEl.innerHTML = dynamicFeedback;
         surveyFeedbackTextEl.style.display = 'block';
